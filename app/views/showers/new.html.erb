@@ -1,2 +1,9 @@
-<h1>Showers#new</h1>
-<p>Find me in app/views/showers/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>New Shower</h1>
+      <%= render 'form' %>
+      <%= link_to 'Back', showers_path %>
+    </div>
+  </div>
+</div>
