@@ -17,7 +17,9 @@ class ShowersController < ApplicationController
 
   def create
     @shower = Shower.new(shower_params)
-    if @shower.save
+    # add current user when login is set !!!!!!!!!!!!!!!!
+    @shower.user = User.all.sample
+    if @shower.save!
       redirect_to shower_path(@shower)
     else
       render :new
