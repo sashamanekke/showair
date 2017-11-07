@@ -1,26 +1,28 @@
 <h1><%= @shower.title %></h1>
 
-<div class="banner" style="background-image: url(<%=image_path "bathroom_ph.jpg"%>);">
+<div class="banner" style="background-image: url(<%=image_path "sex_in_shower.jpg"%>);">
   <div class="banner-content">
-    <%= link_to 'View Photos'%>
+    <%= link_to 'View Photos', class: "btn btn-primary" %>
   </div>
 </div>
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="form-post">
-        <h2><%= @shower.price %></h2>
-        <%= simple_form_for(@shower) do |f| %>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.input :title, placeholder: "title" %>
-          </div>
-        </div>
-          <%= f.submit "Reserve", class: "btn btn-primary"%>
-        <% end %>
+  <div class="text-center">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1><%= @shower.description %></h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit facilis officiis, harum quisquam optio totam unde odio sint repellat eligendi!
+        </p>
+
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
