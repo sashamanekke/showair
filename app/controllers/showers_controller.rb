@@ -1,5 +1,6 @@
 class ShowersController < ApplicationController
   def index
+    @showers = Shower.all
   end
 
   def show
