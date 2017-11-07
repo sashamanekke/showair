@@ -5,6 +5,7 @@ class ShowersController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy

@@ -1,35 +1,81 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-  # Shower.create([{ address: '123 Street' }, { title: 'Clean Bathroom' }, {description: 'A very nice and clean bathroom'}, {price: 250.00}])
-  # Shower.create([{ address: '456 Avenue' }, { title: 'Decent Bathroom' }, {description: 'A very decent bathroom'}, {price: 250.00}])
-  # Shower.create([{ address: '23 Jordan St.' }, { title: 'Ok Bathroom' }, {description: 'A bathroom'}, {price: 250.00}])
-  # Character.create(name: 'Luke', movie: movies.first)
-Shower.destroy_all
+puts 'Creating 5 fake users...'
+5.times do
+  user = User.new(
+    name:    Faker::Name.name,
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    surname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    host: false,
+    password: "topsecret"
+    )
+  user.save!
+end
+puts 'Finished!'
 
-User.create!([{name: "Tom", address: "67 Rub street", email: "tom@gmail.com", password: "qwerty", host: false }])
+puts 'Creating 20 fake showers...'
+20.times do
+  shower = Shower.new(
+    title:    Faker::Space.planet,
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    user: User.all.sample,
+    price: Faker::Number.decimal(2),
+    picture: "shower.png",
+    description: Faker::Coffee.blend_name
+    )
+  shower.save!
+end
+puts 'Finished!'
 
+puts 'Creating 2 fake reservations...'
+2.times do
+  reservation = Reservation.new(
+    hour: Time.now,
+    user: User.all.sample,
+    shower: Shower.all.sample
+    )
+  reservation.save!
+end
+puts 'Finished!'
 
+# create_table "reservations", force: :cascade do |t|
+#   t.time "hour"
+#   t.bigint "user_id"
+#   t.bigint "shower_id"
+#   t.datetime "created_at", null: false
+#   t.datetime "updated_at", null: false
+#   t.index ["shower_id"], name: "index_reservations_on_shower_id"
+#   t.index ["user_id"], name: "index_reservations_on_user_id"
+# end
 
-Shower.create!([{
-  title: "Nice Bathroom",
-  address: "Peyton Reed",
-  description: "A very nice and clean bathroom",
-  price: 150
-},
-{
-  title: "Decent Bathroom",
-  address:"123 street" ,
-  description: "A very decent bathroom",
-  price: 400
-},
-{
-  title: "OK Bathroom",
-  address: "456 avenue",
-  description:"A very ok bathroom" ,
-  price: 1250
-}])
+ # create_table "showers", force: :cascade do |t|
+ #    t.string "address"
+ #    t.bigint "user_id"
+ #    t.string "picture"
+ #    t.string "title"
+ #    t.string "description"
+ #    t.integer "price"
+ #    t.datetime "created_at", null: false
+ #    t.datetime "updated_at", null: false
+ #    t.index ["user_id"], name: "index_showers_on_user_id"
+ #  end
 
-p "Created #{Shower.count} movies"
+# create_table "users", force: :cascade do |t|
+#     t.string "name"
+#     t.string "address"
+#     t.string "surname"
+#     t.boolean "host"
+#     t.datetime "created_at", null: false
+#     t.datetime "updated_at", null: false
+#     t.string "email", default: "", null: false
+#     t.string "encrypted_password", default: "", null: false
+#     t.string "reset_password_token"
+#     t.datetime "reset_password_sent_at"
+#     t.datetime "remember_created_at"
+#     t.integer "sign_in_count", default: 0, null: false
+#     t.datetime "current_sign_in_at"
+#     t.datetime "last_sign_in_at"
+#     t.inet "current_sign_in_ip"
+#     t.inet "last_sign_in_ip"
+#     t.index ["email"], name: "index_users_on_email", unique: true
+#     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+#   end
