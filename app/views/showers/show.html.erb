@@ -1,2 +1,26 @@
-<h1>Showers#show</h1>
-<p>Find me in app/views/showers/show.html.erb</p>
+<h1><%= @shower.title %></h1>
+
+<div class="banner" style="background-image: url(<%=image_path "bathroom_ph.jpg"%>);">
+  <div class="banner-content">
+    <%= link_to 'View Photos'%>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h2><%= shower.price %></h2>
+        <%= simple_form_for(@shower) do |f| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= f.input :title, placeholder: "title" %>
+          </div>
+        </div>
+          <%= f.submit "Reserve", class: "btn btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
