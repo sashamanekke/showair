@@ -21,4 +21,8 @@ class ShowersController < ApplicationController
   def update
 
   end
+ def set_params
+   params.require(:product).permit(:name, :description, :photo)
+ end
+
 end
