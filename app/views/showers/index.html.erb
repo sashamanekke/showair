@@ -1,2 +1,6 @@
 <h1>Showers#index</h1>
 <p>Find me in app/views/showers/index.html.erb</p>
+
+<% @showers.each do |shower| %>
+  <%= shower.title %>
+<% end %>
