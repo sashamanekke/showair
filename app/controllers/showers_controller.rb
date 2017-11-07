@@ -1,4 +1,5 @@
 class ShowersController < ApplicationController
+  before_action :set_shower, only: [:show, :edit, :update, :destroy]
   def index
     @showers = Shower.all
   end
@@ -13,13 +14,28 @@ class ShowersController < ApplicationController
   def new
     @shower = Shower.new
   end
-  def create
 
+  def create
+    @shower = Shower.new(shower_params)
+    if @shower.save
+      redirect_to shower_path(@shower)
+    else
+      render :new
+    end
   end
 
   def edit
   end
-  def update
 
+  def update
   end
+
+  private
+  def set_shower
+    @shower = Shower.find(params[:id])
+  end
+  def shower_params
+    params.require(:shower).permit(:title, :description, :address, :price, :picture)
+  end
+
 end
