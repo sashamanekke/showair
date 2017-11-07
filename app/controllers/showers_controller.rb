@@ -10,6 +10,7 @@ class ShowersController < ApplicationController
   end
 
   def new
+    @shower = Shower.new
   end
   def create
 
