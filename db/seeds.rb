@@ -7,8 +7,11 @@
   # Shower.create([{ address: '456 Avenue' }, { title: 'Decent Bathroom' }, {description: 'A very decent bathroom'}, {price: 250.00}])
   # Shower.create([{ address: '23 Jordan St.' }, { title: 'Ok Bathroom' }, {description: 'A bathroom'}, {price: 250.00}])
   # Character.create(name: 'Luke', movie: movies.first)
-
 Shower.destroy_all
+
+User.create!([{name: "Tom", address: "67 Rub street", email: "tom@gmail.com", password: "qwerty", host: false }])
+
+
 
 Shower.create!([{
   title: "Nice Bathroom",
