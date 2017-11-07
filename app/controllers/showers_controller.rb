@@ -17,6 +17,8 @@ class ShowersController < ApplicationController
 
   def create
     @shower = Shower.new(shower_params)
+    puts @shower
+    puts shower_params
     # add current user when login is set !!!!!!!!!!!!!!!!
     @shower.user = User.all.sample
     if @shower.save!
@@ -37,7 +39,7 @@ class ShowersController < ApplicationController
     @shower = Shower.find(params[:id])
   end
   def shower_params
-    params.require(:shower).permit(:title, :description, :address, :price, :picture)
+    params.require(:shower).permit(:title, :description, :address, :price, picture: [], pictures: [])
   end
 
 end
