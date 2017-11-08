@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108105415) do
+ActiveRecord::Schema.define(version: 20171108153836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20171108105415) do
     t.bigint "shower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "card_number"
+    t.integer "expiration"
+    t.integer "security_code"
     t.index ["shower_id"], name: "index_reservations_on_shower_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
