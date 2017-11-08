@@ -1,3 +1,8 @@
+puts 'Cleaning database...'
+Shower.destroy_all
+User.destroy_all
+Reservation.destroy_all
+
 puts 'Creating 5 fake users...'
 5.times do
   user = User.new(
@@ -12,17 +17,19 @@ puts 'Creating 5 fake users...'
 end
 puts 'Finished!'
 
+url = "https://picsum.photos/200/300/?random"
+
 puts 'Creating 20 fake showers...'
-20.times do
+15.times do
   shower = Shower.new(
     title:    Faker::Space.planet,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     user: User.all.sample,
     price: Faker::Number.decimal(2),
-    picture: "shower.png",
     description: Faker::Coffee.blend_name
     )
   shower.save!
+  shower.picture_urls = [url]
 end
 puts 'Finished!'
 
