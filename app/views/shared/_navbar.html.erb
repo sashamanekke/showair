@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="<%= image_path("boolman-eyes.png") %> " alt="logo blue" id="logo-small">
+    <img src="<%= image_path("boolman.png") %> " alt="logo blue" id="logo-small">
     <!-- Uncomment next line if you want the shower logo -->
     <!-- <i class="fa fa-bath fa-3x" aria-hidden="true"></i> -->
   </a>
@@ -19,10 +19,14 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% if current_user.avatar.nil? %>
+          <%= image_tag "http://www.abc.net.au/news/image/8314104-1x1-940x940.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% else %>
+          <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
+            <%= link_to user_path(current_user) do %>
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
