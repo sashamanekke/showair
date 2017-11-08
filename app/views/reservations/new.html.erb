@@ -6,8 +6,9 @@
         <%= f.input :CreditCard, placeholder: "XXXX-XXXX-XXXX-1234"  %>
         <%= f.input :Expiration, placeholder: "MM/YYYY" %>
         <%= f.input :Code, placeholder: "XXX" %>
-        <%= f.button :submit, class: "btn btn-primary"  %>
+        <% #f.button :submit, class: "btn btn-primary" %>
         <% end %>
+        <%= link_to 'Reserve', shower_reservation_path(@shower, @shower.reservations.sample), class: "btn btn-primary" %>
       </div>
     </div>
   </div>

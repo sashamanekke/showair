@@ -5,7 +5,9 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    # @reservation = Reservation.new
+     #@reservation = Reservation.new
+    @shower = Shower.find(params[:shower_id])
+
   end
 
   def create

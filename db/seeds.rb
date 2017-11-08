@@ -26,8 +26,8 @@ puts 'Creating 20 fake showers...'
 end
 puts 'Finished!'
 
-puts 'Creating 2 fake reservations...'
-2.times do
+puts 'Creating 20 fake reservations...'
+20.times do
   reservation = Reservation.new(
     hour: Time.now,
     user: User.all.sample,
