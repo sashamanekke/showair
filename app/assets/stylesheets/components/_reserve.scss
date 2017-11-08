@@ -1,0 +1,85 @@
+// -------Main Title/Description --------
+.reserve-container {
+  margin: 15px 15px;
+  position: relative;
+}
+
+.reserve-body {
+  width: 60%;
+    h1 {
+      padding-bottom: 15px;
+    }
+    p {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+}
+
+// -------Main Reserve Box--------
+
+
+.reserve-box {
+  position: relative;
+  border: 1px solid #DBDBDB !important;
+  float: right;
+  width: 400px;
+  height: 200px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Helvetica Neue;
+    p {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+}
+
+.reserve-divider {
+  border-bottom: 1px solid #DBDBDB !important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+// -------Nav Below Banner + Above Description--------
+.description-nav {
+  display: inline-block;
+  font-size: 12px;
+    p {
+      font-weight: bold;
+    }
+}
+.description-nav-divider {
+  border-bottom: 1px solid #DBDBDB !important;
+  width: 60%;
+}
+
+// -------Contact Host--------
+.contact-host {
+  font-size: 20px;
+  font-weight: bold;
+    p {
+      font-weight: lighter;
+    }
+
+}
+
+
+// -------Temporary elements--------
+
+.temp-home {
+  left: 0;
+
+}
+
+// -------New Reservation (Payment Page)--------
+
+.center-form {
+  display: block;
+  text-align: center;
+  margin-left: 35%;
+
+}
+
+
+
