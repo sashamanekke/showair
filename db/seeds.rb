@@ -1,3 +1,8 @@
+puts 'Cleaning database...'
+Shower.destroy_all
+User.destroy_all
+Reservation.destroy_all
+
 puts 'Creating 5 fake users...'
 5.times do
   user = User.new(
@@ -12,7 +17,7 @@ puts 'Creating 5 fake users...'
 end
 puts 'Finished!'
 
-url = "http://img.clubic.com/07791435-photo-playstation.jpg"
+url = "https://picsum.photos/200/300/?random"
 
 puts 'Creating 20 fake showers...'
 2.times do
@@ -24,7 +29,7 @@ puts 'Creating 20 fake showers...'
     description: Faker::Coffee.blend_name
     )
   shower.save!
-  shower.photo_url = url
+  shower.picture_urls = [url]
 end
 puts 'Finished!'
 
