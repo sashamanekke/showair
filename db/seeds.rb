@@ -20,7 +20,7 @@ puts 'Finished!'
 
 url = "https://picsum.photos/200/300/?random"
 
-puts 'Creating 20 fake showers...'
+puts 'Creating 15 fake showers...'
 15.times do
   shower = Shower.new(
     title:    Faker::Space.planet,

@@ -5,7 +5,9 @@
           <div class="main-content">
             <!-- <img src="<%= @user.avatar %>" alt=""> -->
             <h2><%= @user.name %><%= @user.surname %></h2>
-            <%= image_tag @user.avatar, class: "avatar-large" %>
+            <% unless @user.avatar.nil? %>
+              <%= image_tag @user.avatar, class: "avatar-large" %>
+            <% end %>
             <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
             <ul class="no-bullet">
               <li><%= @user.address %></li>
