@@ -17,12 +17,16 @@ class ShowersController < ApplicationController
   end
 
   def create
+    url = "https://www.seniortheatre.com/wp-content/themes/Seniorth/images/noimage.png"
     @shower = Shower.new(shower_params)
     puts @shower
     puts shower_params
     # add current user when login is set !!!!!!!!!!!!!!!!
     @shower.user = User.all.sample
     if @shower.save!
+      if @shower.pictures == []
+        @shower.picture_urls = [url]
+      end
       redirect_to shower_path(@shower)
     else
       render :new
@@ -40,7 +44,7 @@ class ShowersController < ApplicationController
     @shower = Shower.find(params[:id])
   end
   def shower_params
-    params.require(:shower).permit(:title, :description, :address, :price, picture: [], pictures: [])
+    params.require(:shower).permit(:title, :description, :address, :price, :picture, pictures: [])
   end
 
 end
