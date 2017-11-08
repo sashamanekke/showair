@@ -4,6 +4,7 @@ puts 'Creating 5 fake users...'
     name:    Faker::Name.name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     surname: Faker::Name.last_name,
+    avatar: "https://picsum.photos/200/300/?random",
     email: Faker::Internet.email,
     host: false,
     password: "topsecret"
