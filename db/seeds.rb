@@ -12,17 +12,19 @@ puts 'Creating 5 fake users...'
 end
 puts 'Finished!'
 
+url = "http://img.clubic.com/07791435-photo-playstation.jpg"
+
 puts 'Creating 20 fake showers...'
-20.times do
+2.times do
   shower = Shower.new(
     title:    Faker::Space.planet,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     user: User.all.sample,
     price: Faker::Number.decimal(2),
-    picture: "shower.png",
     description: Faker::Coffee.blend_name
     )
   shower.save!
+  shower.photo_url = url
 end
 puts 'Finished!'
 
