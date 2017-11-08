@@ -1,2 +1,16 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
+<div class="container text-center">
+  <h1><%= @shower.title %></h1>
+  <p>
+    <%= @shower.price %>
+  </p>
+  <p>
+    <%= @shower.description %>
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae nihil expedita fuga sit maxime veritatis? Molestiae totam expedita deserunt dicta!
+  </p>
+</div>
+
+<div class="text-center">
+  <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
+</div>
