@@ -1,3 +1,14 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
-lkqsjdfkqjsdklfjqslkdfjlkqsjdf
+<div class="container text-align">
+  <div class="center-form">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <%= simple_form_for :reservation do |f| %>
+        <%= f.input :CreditCard, placeholder: "XXXX-XXXX-XXXX-1234"  %>
+        <%= f.input :Expiration, placeholder: "MM/YYYY" %>
+        <%= f.input :Code, placeholder: "XXX" %>
+        <%= f.button :submit, class: "btn btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
