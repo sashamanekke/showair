@@ -34,16 +34,16 @@ puts 'Creating 20 fake showers...'
 end
 puts 'Finished!'
 
-puts 'Creating 20 fake reservations...'
-20.times do
-  reservation = Reservation.new(
-    hour: Time.now,
-    user: User.all.sample,
-    shower: Shower.all.sample
-    )
-  reservation.save!
-end
-puts 'Finished!'
+# puts 'Creating 20 fake reservations...'
+# 20.times do
+#   reservation = Reservation.new(
+#     hour: Time.now,
+#     user: User.all.sample,
+#     shower: Shower.all.sample
+#     )
+#   reservation.save!
+# end
+# puts 'Finished!'
 
 # create_table "reservations", force: :cascade do |t|
 #   t.time "hour"

@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-     #@reservation = Reservation.new
+    @reservation = Reservation.new
     @shower = Shower.find(params[:shower_id])
 
   end
@@ -13,8 +13,9 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.shower = @shower
+    @reservation.user = current_user
     if @reservation.save
-        redirect_to shower_path(@shower)
+        redirect_to shower_reservation_path(@shower, @reservation)
       else
         render :new
     end
@@ -27,5 +28,4 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:hour)
   end
-
 end
