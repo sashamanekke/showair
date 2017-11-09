@@ -34,9 +34,10 @@
       </div>
     </div>
     <div class="stat">
+      <%#= link_to "Create Shower", new_shower_path %>
       <div class="stat-content">
 
-        <%= link_to "Create Shower", new_shower_path %>
+
         <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
         <% if @user.showers.empty? %>
         <p>you don't have showers yet</p>
@@ -45,22 +46,20 @@
         <% @user.showers.each do |shower| %>
         <div class="ul-box-style">
           <h3 class="shower-title"><%= shower.title %></h3>
+
           <div class="flex-box">
            <div class="shower-picture" style="background-image: url('<%= cl_image_path shower.pictures[0].path , height: 100, width: 100, crop: :fill %>')">
-
-          </div>
-          <div class="list-shower">
-
-              <h3>address: </h3><%=shower.address %> <br>
-              <h3>description: </h3>  <%=shower.description %> <br>
-              <h3>price:</h3> <%=shower.price %> <br>
-
+           </div>
+           <div class="list-shower">
+            <h3>address: </h3><%=shower.address %> <br>
+            <h3>description: </h3>  <%=shower.description %> <br>
+            <h3>price:</h3> <%=shower.price %> <br>
           </div>
         </div>
-        <% end %>
-        <% end %>
-
       </div>
+      <% end %>
+      <% end %>
+
     </div>
   </div>
   <div class="stat">
