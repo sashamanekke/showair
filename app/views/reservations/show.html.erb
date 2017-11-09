@@ -1,16 +1,56 @@
-<div class="container text-center">
-  <h1><%= @shower.title %></h1>
-  <p>
-    <%= @shower.price %>
-  </p>
-  <p>
-    <%= @shower.description %>
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae nihil expedita fuga sit maxime veritatis? Molestiae totam expedita deserunt dicta!
-  </p>
+<div class="container">
+  <div class="text-center">
+    <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
+  </div>
+  <div class="reservation-title">
+    <h1>Confirmation: <%= @shower.title %> booked</h1>
+    <p>Booked by <%= current_user %></p>
+    <p><%= Time.now.strftime("%m/%d/%Y") %></p>
+  </div>
+
+  <div class="main-grid">
+    <div class="reservation-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="reservation-box-left">
+            <h2>Shower is @ <%= Time.now.strftime("%H:%M")%></h2>
+            <div class="reservation-divider"></div>
+            <p><strong>Location:</strong></p>
+            <p><%= @shower.address %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reservation-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="reservation-box-right">
+            <h2>Charges</h2>
+            <p>$<%= @shower.price %></p>
+            <p>Service fee:</p>
+            <div class="reservation-shaded-area">Total: </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reservation-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="reservation-box-bottom">
+            <h2>Payment</h2>
+            <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
+            <p>Total Paid:</p>
+            <div class="reservation-divider"></div>
+            <p>Add billing detials</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="text-center">
-  <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
-</div>
+
+
