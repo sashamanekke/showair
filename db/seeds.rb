@@ -19,12 +19,17 @@ end
 puts 'Finished!'
 
 url = "https://picsum.photos/200/300/?random"
+addresses = [
+  'avenue victor jacobs 78, 1040 bruxelles',
+  'avenue montjoie 118, 1180 Bruxelles',
+  'grote hertstraat 5, 1653, Dworp'
+]
 
 puts 'Creating 15 fake showers...'
 15.times do
   shower = Shower.new(
     title:    Faker::Space.planet,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    address: addresses.sample,
     user: User.all.sample,
     price: Faker::Number.decimal(2),
     description: Faker::Coffee.blend_name
