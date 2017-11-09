@@ -15,7 +15,13 @@
 
         <div class="stat">
           <div class="stat-content">
-            <a href="#" class="btn btn-primary ">All Reservations</a>
+
+             <% @user.reservations.each do |reservation| %>
+          <ul><li><%= reservation.id %></li>
+          <li><%= reservation.hour %></li>
+          <li><%= reservation.shower %></li>
+        </ul>
+          <% end %>
           </div>
         </div>
         <div class="stat">
