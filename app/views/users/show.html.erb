@@ -5,26 +5,24 @@
           <div class="main-content">
             <!-- <img src="<%= @user.avatar %>" alt=""> -->
             <h2><%= @user.name %><%= @user.surname %></h2>
+            <%= render partial: "shared/profile_cards" %>
             <% unless @user.avatar.nil? %>
               <%= image_tag @user.avatar, class: "avatar-large" %>
             <% end %>
-            <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
-            <ul class="no-bullet">
-              <li><%= @user.address %></li>
-              <li><%= @user.email %></li>
-            </ul>
+            <a href="#" class="btn btn-primary ">Get in touch</a>
           </div>
         </div>
+
         <div class="stat">
           <div class="stat-content">
- <a href="#" class="btn btn-primary ">All Reservations</a>
+            <a href="#" class="btn btn-primary ">All Reservations</a>
           </div>
         </div>
         <div class="stat">
           <div class="stat-content">
 
-
-             <a href="#" class="btn btn-primary ">Create Shower</a>
+            <%= link_to "Create Shower", new_shower_path %>
+             <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
 
 
           </div>

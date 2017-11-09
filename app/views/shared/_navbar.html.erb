@@ -1,9 +1,10 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="<%= image_path("boolman.png") %> " alt="logo blue" id="logo-small">
+    <!-- Uncomment next line if you want the boolrank logo -->
+<!--     <img src="<%= image_path("boolman.png") %> " alt="logo blue" id="logo-small"> -->
     <!-- Uncomment next line if you want the shower logo -->
-    <!-- <i class="fa fa-bath fa-3x" aria-hidden="true"></i> -->
+    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
   </a>
 
   <!-- Right Navigation -->
@@ -20,7 +21,8 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_user.avatar.nil? %>
-          <%= image_tag "http://www.abc.net.au/news/image/8314104-1x1-940x940.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% avatar_url = current_user.facebook_picture_url || "http://www.abc.net.au/news/image/8314104-1x1-940x940.jpg" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
           <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
