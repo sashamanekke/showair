@@ -6,7 +6,7 @@ class ShowersController < ApplicationController
   end
 
   def show
-
+    @shower = Shower.find(params[:id])
   end
 
   def destroy

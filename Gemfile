@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'omniauth-facebook'
+gem "geocoder"
 
 gem 'faker'
 gem 'devise'
