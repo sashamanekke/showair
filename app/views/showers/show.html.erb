@@ -1,6 +1,6 @@
 <div class="title-content">
   <h1><%= @shower.title %></h1>
-  <%= link_to 'Home', new_shower_reservation_path(@shower), class: "temp-home btn btn-primary"%>
+  <%= link_to 'Home', showers_path, class: "temp-home btn btn-primary"%>
 </div>
 
 <div class="banner" style="background-image: url('<%= cl_image_path @shower.pictures[0].path , height: 300, width: 400, crop: :fill %>')">
@@ -17,9 +17,9 @@
         <div class="reserve-box">
           <%= render partial: "reservations/reserve" %>
         </div>
-        <div class="description-nav">
-          <p>Overview • Reviews • The Host • Location</p>
-        </div>
+          <p class="description-nav">
+            <span>Overview • Reviews • The Host • Location</span>
+          </p>
         <div class="description-nav-divider"></div>
         <div class="reserve-body">
           <h1><%= @shower.description %></h1>
