@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109083805) do
+ActiveRecord::Schema.define(version: 20171109144005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20171109083805) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent-"
+  end
+
+  create_table "availibilities", force: :cascade do |t|
+    t.integer "hour"
+    t.boolean "available"
+    t.bigint "shower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shower_id"], name: "index_availibilities_on_shower_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -86,6 +95,7 @@ ActiveRecord::Schema.define(version: 20171109083805) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "availibilities", "showers"
   add_foreign_key "reservations", "showers"
   add_foreign_key "reservations", "users"
   add_foreign_key "showers", "users"
