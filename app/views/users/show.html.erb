@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="profile text-center">
     <div class="main">
@@ -15,60 +14,70 @@
 
     <div class="stat">
       <div class="stat-content">
-        <% raise %>
-        <%= link_to 'All Reservations', shower_reservations_path(@showers), class: "btn btn-primary" %>
+
+        <% if @user.reservations.empty? %>
+        <p>No reservations</p>
+
+        <% else %>
+
+        <% @user.reservations.each do |reservation| %>
+        <div class="ul-box-style">
+          <ul>
+            <li><h3>reservation id :</h3><%= reservation.id %></li>
+            <li>reservation hour: <%= reservation.hour %></li>
+            <li>reservation shower:<%= reservation.shower.title %></li>
+          </ul>
+        </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
     <div class="stat">
+      <%#= link_to "Create Shower", new_shower_path %>
       <div class="stat-content">
 
-        <%= link_to "Create Shower", new_shower_path %>
+
         <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
+        <% if @user.showers.empty? %>
+        <p>you don't have showers yet</p>
 
+        <% else %>
+        <% @user.showers.each do |shower| %>
+        <div class="ul-box-style">
+          <h3 class="shower-title"><%= shower.title %></h3>
 
+          <div class="flex-box">
+           <div class="shower-picture" style="background-image: url('<%= cl_image_path shower.pictures[0].path , height: 100, width: 100, crop: :fill %>')">
+           </div>
+           <div class="list-shower">
+            <h3>address: </h3><%=shower.address %> <br>
+            <h3>description: </h3>  <%=shower.description %> <br>
+            <h3>price:</h3> <%=shower.price %> <br>
+          </div>
+        </div>
       </div>
+      <% end %>
+      <% end %>
+
     </div>
-    <div class="stat">
-      <div class="stat-content">
-        <%=  link_to 'Find Shower', showers_path, class: "btn btn-primary"%>
+  </div>
+  <div class="stat">
+    <div class="stat-content">
+      <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
+      <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
 
-      </div>
     </div>
-    <div class="description">
-      <div class="description-content">
-        <h3>User infos</h3>
-        <ul class="no-bullet">
-          <li><%= @user.address %></li>
-          <li><%= @user.email %></li>
-          <li>ratings</li>
-        </ul>
+  </div>
+  <div class="description">
+    <div class="description-content">
+      <h3>User infos</h3>
+      <ul>
+        <li><%= @user.address %></li>
+        <li><%= @user.email %></li>
+        <li>ratings</li>
+      </ul>
 
-      </div>
     </div>
   </div>
 </div>
-
-
-
-   <!--    create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "surname"
-    t.boolean "host"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
-    t.string "avatar"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    end -->
-
+</div>
