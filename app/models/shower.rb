@@ -4,6 +4,7 @@ class Shower < ApplicationRecord
 
   belongs_to :user
   has_many :reservations, dependent: :destroy
+  has_many :availibilities, dependent: :destroy
 
 
   after_validation :geocode, if: :address_changed?
