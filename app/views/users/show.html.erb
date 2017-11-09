@@ -44,29 +44,26 @@
         <% else %>
 
         <% @user.showers.each do |shower| %>
-
-
-          <h3><%= shower.title %></h3>
-          <div class="ul-box-style">
+        <div class="ul-box-style">
+          <h3 class="shower-title"><%= shower.title %></h3>
           <div class="flex-box">
-           <div class="shower-picture">
-            <%#= cl_image_tag shower.pictures.first %>
+           <div class="shower-picture" style="background-image: url('<%= cl_image_path shower.pictures[0].path , height: 100, width: 100, crop: :fill %>')">
 
           </div>
           <div class="list-shower">
             <ul>
-              <li><h3>address:</h3> <div><%= shower.address %></div></li>
-              <li><h3>description:</h3> <p><%= shower.description %></p> </li>
-              <li><h3>price:</h3> <p><%= shower.price %></p></li>
+              <li><h3>address: </h3> <p>  </p> <%=shower.address %></li>
+              <li><h3>description: </h3> <p>  </p> <%=shower.description %> </li>
+              <li><h3>price:</h3> <p>  </p> <%=shower.price %></li>
             </ul>
           </div>
         </div>
         <% end %>
         <% end %>
 
+      </div>
     </div>
   </div>
-    </div>
   <div class="stat">
     <div class="stat-content">
       <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->

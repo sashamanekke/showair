@@ -2,10 +2,10 @@
   display: flex;
 }
 
-.list-shower ul li div {
-  font-size: 14px;
-  line-height: 1;
-}
+// .list-shower ul li div {
+//   font-size: 14px;
+//   line-height: 1;
+// }
 
 .profile {
   display: grid;
@@ -76,6 +76,7 @@
 }
 
 .stat-content {
+  width: 200px;
   height: 300px;
   margin: 2px;
   overflow: hidden;
@@ -96,7 +97,7 @@
   color: $text-grey;
   font-size: 17px;
   font-weight: normal;
-   padding: 3px;
+  padding: 3px;
   margin: 0px;
 }
 .description p {
@@ -104,20 +105,45 @@
   font-weight: lighter;
 }
 
+.flex-box {
+  display: flex;
+  margin: 2px;
+  overflow: hidden;
+  overflow: scroll;
+}
+
 .ul-box-style {
-  max-width: 300px;
-  overflow: auto;
   background: white;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
   padding: 5px;
   margin: 10px;
-  display: flex;
+
   align-items: center;
   justify-content: space-around;
 
 }
 
+.shower-title {
+  font-size: 19px !important;
+  margin-bottom: 3px !important;
+}
 
+.shower-picture {
+  width: 100px;
+  height: 100px;
+  background-size: cover !important;
+}
+
+.list-shower ul li {
+  display: flex;
+}
+
+.list-shower {
+
+  font-size: 14px;
+  line-height: 1;
+
+}
 
 .reservation-box {
   height: 200px;
