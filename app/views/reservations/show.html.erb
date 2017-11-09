@@ -9,35 +9,21 @@
   </div>
 
   <div class="main-grid">
-    <div class="reservation-container">
-      <div class="row">
-        <div class="col-xs-12">
+
           <div class="reservation-box-left">
             <h2>Shower is @ <%= Time.now.strftime("%H:%M")%></h2>
             <div class="reservation-divider"></div>
             <p><strong>Location:</strong></p>
             <p><%= @shower.address %></p>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="reservation-container">
-      <div class="row">
-        <div class="col-xs-12">
           <div class="reservation-box-right">
             <h2>Charges</h2>
             <p>$<%= @shower.price %></p>
             <p>Service fee:</p>
             <div class="reservation-shaded-area">Total: </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="reservation-container">
-      <div class="row">
-        <div class="col-xs-12">
           <div class="reservation-box-bottom">
             <h2>Payment</h2>
             <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
@@ -45,11 +31,8 @@
             <div class="reservation-divider"></div>
             <p>Add billing detials</p>
           </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
 </div>
 
 
