@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @pippo = 1
+
+    # @user = @user.reservations
+    # @pippo = 1
+
   end
 
 

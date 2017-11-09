@@ -43,12 +43,10 @@
 
 // -------Nav Below Banner + Above Description--------
 .description-nav {
-  display: inline-block;
   font-size: 12px;
-    p {
-      font-weight: bold;
-    }
+  font-weight: bold;
 }
+
 .description-nav-divider {
   border-bottom: 1px solid #DBDBDB !important;
   width: 60%;
