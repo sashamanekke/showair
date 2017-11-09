@@ -1,6 +1,5 @@
 <div class="title-content">
   <h1><%= @shower.title %></h1>
-  <%= link_to 'Back to Showers', showers_path, class: "temp-home btn btn-primary"%>
 </div>
 
 <div class="banner" style="background-image: url('<%= cl_image_path @shower.pictures[0].path , height: 300, width: 400, crop: :fill %>')">
