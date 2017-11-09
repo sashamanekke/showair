@@ -1,6 +1,9 @@
-.list-shower ul li {
-  display: flex;
-}
+
+
+
+// .list-shower ul li {
+//   display: flex;
+// }
 
 // .list-shower ul li div {
 //   font-size: 14px;
@@ -24,9 +27,10 @@
   grid-column: 2 / span 3;
 }
 .main, .description, .stat {
+
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 15px;
+  padding: 5px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -75,13 +79,7 @@
   opacity: 0.7;
 }
 
-.stat-content {
-  width: 200px;
-  height: 300px;
-  margin: 2px;
-  overflow: hidden;
-  overflow: scroll;
-}
+
 
 .stat h3 {
   color: $text-grey;
@@ -108,18 +106,27 @@
 .flex-box {
   display: flex;
   margin: 2px;
+}
+
+.stat-content {
+  max-height: 300px;
+  margin: 2px;
   overflow: hidden;
   overflow: scroll;
+
+  padding: 10px;
+  margin: 0px;
 }
 
 .ul-box-style {
   background: white;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
   padding: 5px;
-  margin: 10px;
+  margin: 1px;
 
   align-items: center;
   justify-content: space-around;
+
 
 }
 
@@ -134,12 +141,13 @@
   background-size: cover !important;
 }
 
-.list-shower ul li {
-  display: flex;
+.shower-picture {
+  margin: 5px;
 }
 
-.list-shower {
 
+.list-shower {
+  text-align: left;
   font-size: 14px;
   line-height: 1;
 
