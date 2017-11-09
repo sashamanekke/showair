@@ -1,57 +1,92 @@
 
-  <div class="container">
-      <div class="profile text-center">
-        <div class="main">
-          <div class="main-content">
-            <!-- <img src="<%= @user.avatar %>" alt=""> -->
-            <h2><%= @user.name %><%= @user.surname %></h2>
-            <%= render partial: "shared/profile_cards" %>
-            <% unless @user.avatar.nil? %>
-              <%= image_tag @user.avatar, class: "avatar-large" %>
-            <% end %>
-            <a href="#" class="btn btn-primary ">Get in touch</a>
-          </div>
-        </div>
-
-        <div class="stat">
-          <div class="stat-content">
-
-             <% @user.reservations.each do |reservation| %>
-          <ul><li><%= reservation.id %></li>
-          <li><%= reservation.hour %></li>
-          <li><%= reservation.shower %></li>
-        </ul>
-          <% end %>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-content">
-
-            <%= link_to "Create Shower", new_shower_path %>
-             <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
-
-
-          </div>
-          </div>
-        <div class="stat">
-          <div class="stat-content">
-            <a href="#" class="btn btn-primary ">Find Shower</a>
-
-          </div>
-          </div>
-        <div class="description">
-          <div class="description-content">
-            <h3>User infos</h3>
-            <ul class="no-bullet">
-              <li><%= @user.address %></li>
-              <li><%= @user.email %></li>
-              <li>ratings</li>
-            </ul>
-
-          </div>
-        </div>
+<div class="container">
+  <div class="profile text-center">
+    <div class="main">
+      <div class="main-content">
+        <!-- <img src="<%= @user.avatar %>" alt=""> -->
+        <h2><%= @user.name %><%= @user.surname %></h2>
+        <%= render partial: "shared/profile_cards" %>
+        <% unless @user.avatar.nil? %>
+        <%= image_tag @user.avatar, class: "avatar-large" %>
+        <% end %>
+        <a href="#" class="btn btn-primary ">Get in touch</a>
       </div>
     </div>
+
+    <div class="stat">
+      <div class="stat-content">
+
+        <% if @user.reservations.empty? %>
+        <p>No reservations</p>
+
+        <% else %>
+
+        <% @user.reservations.each do |reservation| %>
+        <div class="ul-box-style">
+          <ul>
+            <li><h3>reservation id :</h3><%= reservation.id %></li>
+            <li>reservation hour: <%= reservation.hour %></li>
+            <li>reservation shower:<%= reservation.shower.title %></li>
+          </ul>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+
+        <%= link_to "Create Shower", new_shower_path %>
+        <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
+        <% if @user.showers.empty? %>
+        <p>you don't have showers yet</p>
+
+        <% else %>
+
+        <% @user.showers.each do |shower| %>
+
+
+          <h3><%= shower.title %></h3>
+          <div class="ul-box-style">
+          <div class="flex-box">
+           <div class="shower-picture">
+            <%#= cl_image_tag shower.pictures.first %>
+
+          </div>
+          <div class="list-shower">
+            <ul>
+              <li><h3>address:</h3> <div><%= shower.address %></div></li>
+              <li><h3>description:</h3> <p><%= shower.description %></p> </li>
+              <li><h3>price:</h3> <p><%= shower.price %></p></li>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+
+    </div>
+  </div>
+    </div>
+  <div class="stat">
+    <div class="stat-content">
+      <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
+      <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
+
+    </div>
+  </div>
+  <div class="description">
+    <div class="description-content">
+      <h3>User infos</h3>
+      <ul>
+        <li><%= @user.address %></li>
+        <li><%= @user.email %></li>
+        <li>ratings</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+</div>
 
 
 
@@ -75,5 +110,5 @@
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end -->
+    end -->
 

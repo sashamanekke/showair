@@ -22,7 +22,7 @@ class ShowersController < ApplicationController
     puts @shower
     puts shower_params
     # add current user when login is set !!!!!!!!!!!!!!!!
-    @shower.user = User.all.sample
+    @shower.user = current_user
     if @shower.save!
       if @shower.pictures == []
         @shower.picture_urls = [url]
