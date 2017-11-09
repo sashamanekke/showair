@@ -36,6 +36,7 @@ puts 'Creating 15 fake showers...'
     )
   shower.save!
   shower.picture_urls = [url]
+
 end
 puts 'Finished!'
 

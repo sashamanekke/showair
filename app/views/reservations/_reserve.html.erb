@@ -1,8 +1,28 @@
 <div class="text-center">
   <p>
-  <span>$250</span>
-  <span>per night</span>
+    <span> € <%= @shower.price %> for 1h </span>
   </p>
   <div class="reserve-divider"></div>
+  <ul>
+      <div class="row">
+        <% @shower.availibilities.each do |availibility| %>
+        <div class="col-xs-12">
+          <div class="
+
+          <% if availibility.available %>
+            <%= "btn btn-success" %>
+          <% else %>
+            <%= "btn btn-danger" %>
+          <% end %>
+          width-of-availibility">
+            <%= availibility.hour %>:00
+            <%= availibility.available %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+  </ul>
   <%= link_to 'Reserve', new_shower_reservation_path(@shower, @reservation), class: "btn btn-primary" %>
+
 </div>
