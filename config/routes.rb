@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :showers do
-    resources :reservations, only: [:show, :create, :new]
+    resources :reservations, only: [:show, :create, :new, :index]
   end
   resources :users, only: [:show]
 end
