@@ -45,6 +45,7 @@
 
         <% else %>
         <% @user.showers.each do |shower| %>
+         <%= link_to shower_path(shower) do %>
         <div class="box-style">
           <div class="ul-box-style-2" style="background-image: linear-gradient(-225deg, rgba(0,21,168,0.3) 0%, rgba(50,106,251,0.4) 50%), url('<%= cl_image_path shower.pictures[0].path , height: 800, width: 800, crop: :fill %>')">
             <h3 class="shower-title"><%= shower.title %></h3>
@@ -58,6 +59,8 @@
             </ul>
           </div>
         </div>
+
+        <% end %>
         <% end %>
         <% end %>
 
@@ -68,6 +71,7 @@
       <div class="stat-content">
         <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
         <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
+
       </div>
     </div>
     <div class="description">
