@@ -1,7 +1,5 @@
-<div class="reservation-main-container">
-  <div class="text-center">
-    <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
-  </div>
+
+<div class="container">
   <div class="reservation-title">
 
     <h1>Confirmation: <%= @reservation.shower.title %> booked</h1>
@@ -21,17 +19,17 @@
 
           <div class="reservation-box-right">
             <h2>Charges</h2>
-            <p>$<%= @shower.price %></p>
+            <p> € <%= @shower.price %> - 1h use of shower</p>
             <p>Service fee:</p>
-            <div class="reservation-shaded-area">Total: </div>
+            <div class="reservation-shaded-area">Total: € <%= @shower.price %></div>
           </div>
 
           <div class="reservation-box-bottom">
             <h2>Payment</h2>
             <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
-            <p>Total Paid:</p>
+            <p>Total Paid: € <%= @shower.price %></p>
             <div class="reservation-divider"></div>
-            <p>Add billing detials</p>
+         <!--    <p>Add billing detials</p> -->
           </div>
   </div>
 

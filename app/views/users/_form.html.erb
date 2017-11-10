@@ -1,0 +1,12 @@
+<%= simple_form_for(@user) do |f| %>
+
+
+    <%= f.input :name, placeholder: "Name" %>
+    <%= f.input :surname, placeholder: "surname" %>
+    <%= f.input :address, placeholder: "address" %>
+    <%= f.input :email, placeholder: "address" %>
+  <%= f.input :avatar, as: :attachinary %>
+
+    <%= f.button :submit, class: "btn btn-primary"  %>
+
+<% end %>

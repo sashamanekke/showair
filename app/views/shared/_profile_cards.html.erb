@@ -1,10 +1,19 @@
 
 <figure class="snip1515">
-  <div class="profile-image"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Katcom3.jpg" alt="sample47" /></div>
+  <div class="profile-image">
+   <% if current_user.avatar.nil? %>
+          <% avatar_url = current_user.facebook_picture_url || "http://www.abc.net.au/news/image/8314104-1x1-940x940.jpg" %>
+          <%= image_tag avatar_url,  width: 300, height: 250, id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% elsif  @user.avatar?  %>
+        <%= cl_image_tag @user.avatar.path , width: 300, height: 250, crop: :thumb, gravity: :face %>
+        <% else %>
+
+          <%= cl_image_tag current_user.avatar.path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
+</div>
   <figcaption>
-    <!-- <h3><%= @user.name %><%= @user.surname %></h3>
-    <h4><%= @user.address %></h4> -->
-    <h3>Kathy Shower</h3>
+
+    <h3><%= @user.name %><%= @user.surname %> </h3>
     <h4>American model and actress</h4>
     <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
     <div class="icons"><a href="#"><i class="fa fa-instagram"></i></a>

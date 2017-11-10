@@ -3,12 +3,11 @@
     <div class="main">
       <div class="main-content">
         <!-- <img src="<%= @user.avatar %>" alt=""> -->
-        <h2><%= @user.name %><%= @user.surname %></h2>
+
         <%= render partial: "shared/profile_cards" %>
-        <% unless @user.avatar.nil? %>
-        <%= image_tag @user.avatar, class: "avatar-large" %>
-        <% end %>
-        <a href="#" class="btn btn-primary ">Get in touch</a>
+        <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+
+
       </div>
     </div>
 
