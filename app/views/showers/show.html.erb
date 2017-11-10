@@ -5,9 +5,9 @@
         <div class="reserve-box">
           <%= render partial: "reservations/reserve" %>
         </div>
-          <p class="description-nav">
-            <span>Overview • Reviews • The Host • Location</span>
-          </p>
+        <p class="description-nav">
+          <span>Overview • Reviews • The Host • Location</span>
+        </p>
         <div class="description-nav-divider"></div>
         <div class="reserve-body">
           <h1><%= @shower.description %></h1>
@@ -22,11 +22,8 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit facilis officiis, harum quisquam optio totam unde odio sint repellat eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, deserunt.
           </p>
         </div>
-        <div class="banner" style="background-image: url('<%= cl_image_path @shower.pictures[0].path , height: 300, width: 400, crop: :fill %>')">
-  <div class="banner-content">
-    <%= link_to 'View Photos', class: "btn btn-primary" %>
-  </div>
-</div>
+        <div id="" class="banner" style="height: 588px; background-image: url('<%= cl_image_path @shower.pictures[0].path , crop: :fill %>')">
+        </div>
       </div>
     </div>
   </div>
@@ -34,19 +31,19 @@
 <div id="map" style="width: 100%; height: 600px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
-    });
-  <% end %>
+<%= javascript_tag do %>
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+<% end %>
 <% end %>
 
 
