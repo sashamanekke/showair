@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    @reservation = Reservation.find(reservation_params)
   end
 
   def show

@@ -1,17 +1,30 @@
-<div class="all-res">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="all-res-name">
-    <h3>Gab Dehan</h3>
-    <p>10/07/17</p>
-  </div>
-  <div class="all-res-body">
-    <p><strong>I am not sure yet!</strong></p>
-    <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-    </p>
-  </div>
-  <div class="all-res-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
+<h1>All Reservations</h1>
+<div class="container">
+  <div class="row">
+    <%= current_user.reservations.each do |reservation| %>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="all-res">
+        <%= image_tag "sexy_shower.jpg", :class => "all-res-avatar" %>
+        <div class="all-res-name">
+          <h3><%= @shower.user.name %></h3>
+          <p><%= @reservation.hour %></p>
+        </div>
+        <div class="all-res-body">
+          <p><strong><%= @shower.title %></strong></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odio molestiae quasi, repellat debitis. Facere.
+          </p>
+        </div>
+        <div class="all-res-status">
+          <p class="status pending">Pending</p>
+          <p>€<%= @shower.price %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
+
+
+
+
