@@ -36,6 +36,16 @@ puts 'Creating 15 fake showers...'
     )
   shower.save!
   shower.picture_urls = [url]
+  24.times do |x|
+    available = Availibility.new(hour: x)
+    if (x >= 8) && (x <= 20)
+      available.available = true
+    else
+      available.available = false
+    end
+    available.shower = shower
+    available.save!
+  end
 
 end
 puts 'Finished!'
