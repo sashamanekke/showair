@@ -49,10 +49,10 @@ class ShowersController < ApplicationController
         available.shower = @shower
         available.save!
       end
+      redirect_to shower_path(@shower)
+    else
+      render :new
     end
-    redirect_to shower_path(@shower)
-  else
-    render :new
   end
 
   def edit

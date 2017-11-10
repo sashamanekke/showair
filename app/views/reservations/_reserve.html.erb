@@ -4,23 +4,23 @@
   </p>
   <div class="reserve-divider"></div>
   <ul>
-      <div class="row">
-        <% @shower.availibilities.each do |availibility| %>
-        <div class="col-xs-12">
-          <div class="
-
+    <div class="row">
+      <% @shower.availibilities.each do |availibility| %>
+      <div class="col-xs-12">
+        <div>
           <% if availibility.available %>
-            <%= "btn btn-success" %>
+          <%= link_to "#{availibility.hour}:00 #{availibility.available}",
+          new_shower_reservation_path(@shower, availibility: availibility.id),
+          :class => "btn btn-success width-of-availibility" %>
           <% else %>
-            <%= "btn btn-danger" %>
+          <%= link_to "#{availibility.hour}:00 #{availibility.available}",
+          "#",
+          :class => "btn btn-danger width-of-availibility" %>
           <% end %>
-          width-of-availibility">
-            <%= availibility.hour %>:00
-            <%= availibility.available %>
-          </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
+    </div>
 
   </ul>
   <%= link_to 'Reserve', new_shower_reservation_path(@shower, @reservation), class: "btn btn-primary" %>
