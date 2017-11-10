@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_attachment :avatar
   has_many :reservations, dependent: :destroy
   has_many :showers, dependent: :destroy
   # Include default devise modules. Others available are:
