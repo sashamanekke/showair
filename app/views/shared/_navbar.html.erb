@@ -13,8 +13,8 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "My Reservations", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "My Booked showers", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "My Reservations", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "My Booked showers",  shower_reservations_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
@@ -32,7 +32,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to root_path do %>
             <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
             <% end %>
           </li>
