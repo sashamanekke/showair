@@ -16,7 +16,11 @@
   grid-template-rows: 50% 50%;
 
   padding: 30px;
-  line-height: 15px;
+  line-height: 1.4em;
+  font-size: 14px;
+
+    letter-spacing: 1px;
+    opacity: 0.9;
 }
 .profile .main {
   grid-row: 1 / span 2;
@@ -32,11 +36,11 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 5px;
   margin: 10px;
-  display: flex;
-  align-items: center;
+display: flex;
+  align-items: top;
   justify-content: space-around;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 @media (max-width: 940px) {
   .profile {
@@ -69,9 +73,9 @@
 .profile .btn {
   border-radius: 0;
   border: none;
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 30px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: $blue;
 }
 .profile .btn:hover {
@@ -90,17 +94,20 @@
 .stat p {
   color: $text-grey;
   font-size: 19px;
+
 }
+
+
 .description h3 {
   color: $text-grey;
   font-size: 17px;
   font-weight: normal;
   padding: 3px;
-  margin: 0px;
+  margin-top: 0px;
 }
 .description p {
   color: $text-grey;
-  font-weight: lighter;
+
 }
 
 .flex-box {
@@ -109,40 +116,67 @@
 }
 
 .stat-content {
-  max-height: 300px;
-  margin: 2px;
-  overflow: hidden;
-  overflow: scroll;
+  max-height: 400px ;
 
-  padding: 10px;
-  margin: 0px;
+margin: 0px;
+
+
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+
+  overflow: hidden ;
+  overflow: scroll ;
+
 }
 
 .ul-box-style {
   background: white;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  padding: 5px;
+  padding: 2px;
   margin: 1px;
-
+display: flex;
   align-items: center;
   justify-content: space-around;
 
 
 }
 
+.ul-box-style-2 {
+  background: white;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+
+  margin-top: 0px;
+display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  min-width: 165px;
+  min-height: 130px;
+  background-size: cover !important;
+  color: white !important;
+
+
+
+
+}
+
 .shower-title {
-  font-size: 19px !important;
+  font-size: 23px !important;
   margin-bottom: 3px !important;
+  color: white !important;
 }
 
 .shower-picture {
-  width: 100px;
-  height: 100px;
+  margin-top: 17px;
+  width: 100%;
+  height: 100%;
   background-size: cover !important;
 }
 
 .shower-picture {
-  margin: 5px;
+  margin: 3px;
 }
 
 
@@ -157,3 +191,32 @@
   height: 200px;
   overflow: hidden;
 }
+
+
+
+.title {
+  font-size: 34px;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #5985ff;
+}
+
+.link_shower {
+  margin-bottom: 15px !important;
+}
+
+.box-style {
+   background: white;
+   border-bottom: 1px solid #5985ff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  padding: 2px;
+  margin: 7px;
+
+}
+
+// .infos_user {
+
+
+// }
