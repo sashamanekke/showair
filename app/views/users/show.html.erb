@@ -14,8 +14,9 @@
     </div>
 
     <div class="stat">
-      <div class="stat-content">
 
+      <div class="stat-content">
+            <div class="title"><h3>Reservations</h3></div>
         <% if @user.reservations.empty? %>
         <p>No reservations</p>
 
@@ -24,7 +25,7 @@
         <% @user.reservations.each do |reservation| %>
         <div class="ul-box-style">
           <ul>
-            <li><h3>reservation id :</h3><%= reservation.id %></li>
+            <li>reservation id :<%= reservation.id %></li>
             <li>reservation hour: <%= reservation.hour %></li>
             <li>reservation shower:<%= reservation.shower.title %></li>
           </ul>
@@ -34,54 +35,57 @@
       </div>
     </div>
     <div class="stat">
+
       <div class="stat-content">
 
-        <%= link_to "Create Shower", new_shower_path %>
+            <div class="title"><h3>Your Showers</h3></div>
+<%= link_to "Create Shower", new_shower_path, :class => "link_shower" %>
         <!-- <a href="#" class="btn btn-primary ">Create Shower</a> -->
         <% if @user.showers.empty? %>
         <p>you don't have showers yet</p>
 
         <% else %>
         <% @user.showers.each do |shower| %>
-        <div class="ul-box-style">
+        <div class="box-style">
+        <div class="ul-box-style-2" style="background-image: linear-gradient(-225deg, rgba(0,21,168,0.3) 0%, rgba(50,106,251,0.4) 50%), url('<%= cl_image_path shower.pictures[0].path , height: 800, width: 800, crop: :fill %>')">
           <h3 class="shower-title"><%= shower.title %></h3>
-          <div class="flex-box">
-           <div class="shower-picture" style="background-image: url('<%= cl_image_path shower.pictures[0].path , height: 100, width: 100, crop: :fill %>')">
 
-          </div>
-          <div class="list-shower">
-            <ul>
-              <li><h3>address: </h3> <p>  </p> <%=shower.address %></li>
-              <li><h3>description: </h3> <p>  </p> <%=shower.description %> </li>
-              <li><h3>price:</h3> <p>  </p> <%=shower.price %></li>
-            </ul>
-          </div>
         </div>
+        <div class="shower-infos">
+          <ul>
+            <li>shower id :<%= shower.id %></li>
+            <li>Address: <%= shower.address %></li>
+            <li>Price:<%= shower.price %></li>
+          </ul>
+        </div>
+      </div>
         <% end %>
         <% end %>
 
       </div>
-    </div>
-  </div>
-  <div class="stat">
-    <div class="stat-content">
-      <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
-      <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
 
     </div>
-  </div>
-  <div class="description">
-    <div class="description-content">
-      <h3>User infos</h3>
-      <ul>
-        <li><%= @user.address %></li>
-        <li><%= @user.email %></li>
-        <li>ratings</li>
-      </ul>
+    <div class="stat">
+      <div class="stat-content">
+        <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
+        <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
 
+      </div>
     </div>
-  </div>
+    <div class="description">
+      <div class="description-content">
+        <h3>User infos</h3>
+        <div class="infos_user">
+        <ul>
+          <li><strong>Address :</strong> <%= @user.address %></li>
+          <li><strong>Email :</strong> <%= @user.email %></li>
+          <li><strong>Description :</strong> Kathleen Ann Shower (born March 8, 1953 as Kathleen Ann Schrauer) is an American model and actress. Known as Kathy Shower she is Playboy's Playmate of the Month for May 1985 and Playmate of the Year for 1986. At the time of her first appearance, she was the oldest woman ever to appear as a Playboy Playmate, at age 33 as well as a single mother of two.</li>
+          <li>ratings</li>
+        </ul>
 </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

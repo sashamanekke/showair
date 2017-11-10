@@ -30,6 +30,7 @@ class ShowersController < ApplicationController
   def create
     url = "https://www.seniortheatre.com/wp-content/themes/Seniorth/images/noimage.png"
     @shower = Shower.new(shower_params)
+
     puts @shower
     puts shower_params
     # add current user when login is set !!!!!!!!!!!!!!!!
@@ -37,6 +38,11 @@ class ShowersController < ApplicationController
     if @shower.save!
       if @shower.pictures == []
         @shower.picture_urls = [url]
+      end
+      24.times do |x|
+        available = Availibility.new(hour: x, available: false)
+        available.shower = @shower
+        available.save!
       end
       redirect_to shower_path(@shower)
     else

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'availibilities/new'
+
+  get 'availibilities/create'
+
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
   devise_for :users,
