@@ -78,8 +78,22 @@
 .center-form {
   display: block;
   text-align: center;
-  margin-left: 35%;
+  // margin-left: 35%;
+  float: none;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  position: auto;
+  justify-content: center;
+}
 
+.payment-container {
+  max-width: 900px;
+  // padding-left: 100px;
+}
+
+.sf {
+  padding-left: 10px;
 }
 
 
