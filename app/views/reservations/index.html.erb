@@ -1,0 +1,32 @@
+<h1>All Reservations</h1>
+<div class="container">
+  <div class="row">
+    <% current_user.showers.each do |show| %>
+      <% show.reservations.each do |res| %>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="all-res">
+        <%= image_tag "sexy_shower.jpg", :class => "all-res-avatar" %>
+        <div class="all-res-name">
+          <h3><%= current_user.name %></h3>
+          <p><%= res.hour %></p>
+        </div>
+        <div class="all-res-body">
+          <p><strong><%= res.shower.title %></strong></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odio molestiae quasi, repellat debitis. Facere.
+          </p>
+        </div>
+        <div class="all-res-status">
+          <p class="status pending">Pending</p>
+          <p>€<%= res.shower.price %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+

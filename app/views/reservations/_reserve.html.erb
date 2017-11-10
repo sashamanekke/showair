@@ -1,6 +1,6 @@
-<div class="text-center">
-  <p>
-    <span> € <%= @shower.price %> for 1h </span>
+<div class="reserve-box-scroll" class="text-center">
+  <p class="text-center">
+    <span> Select 1h for € <%= @shower.price %> </span>
   </p>
   <div class="reserve-divider"></div>
   <ul>
@@ -9,11 +9,11 @@
       <div class="col-xs-12">
         <div>
           <% if availibility.available %>
-          <%= link_to "#{availibility.hour}:00 #{availibility.available}",
+          <%= link_to "#{availibility.hour}:00 h",
           new_shower_reservation_path(@shower, availibility: availibility.id),
           :class => "btn btn-success width-of-availibility" %>
           <% else %>
-          <%= link_to "#{availibility.hour}:00 #{availibility.available}",
+          <%= link_to "#{availibility.hour}:00 h Unavailable",
           "#",
           :class => "btn btn-danger width-of-availibility" %>
           <% end %>
@@ -21,8 +21,9 @@
       </div>
       <% end %>
     </div>
-
   </ul>
-  <%= link_to 'Reserve', new_shower_reservation_path(@shower, @reservation), class: "btn-medium" %>
+
+ 
+
 
 </div>

@@ -1,5 +1,10 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :new, :create]
+
+  before_action :set_reservation, only: [:new, :create, :show]
+
+  def index
+    @reservations = Reservation.all
+  end
 
   def show
     @reservation = Reservation.find(params[:id])
