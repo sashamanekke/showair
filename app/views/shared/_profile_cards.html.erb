@@ -2,7 +2,7 @@
 <figure class="snip1515">
   <div class="profile-image">
     <% if @user.avatar? %>
-  <%= cl_image_tag @user.avatar.path , height: 800, width: 800, crop: :fill %>' alt="sample47" />
+  <%= cl_image_tag @user.avatar.path , width: 400, height: 300, crop: :thumb, gravity: :face %>
   <% end %></div>
   <figcaption>
 
