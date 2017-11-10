@@ -2,7 +2,7 @@ puts 'Cleaning database...'
 Shower.destroy_all
 User.destroy_all
 Reservation.destroy_all
-url = "https://picsum.photos/200/300/?random"
+url = "https://picsum.photos/1920/1080/?random"
 
 puts 'Creating 5 fake users...'
 5.times do
