@@ -6,6 +6,8 @@ h1 {
     color: #656565;
 }
 
+
+
 h4 {
   color: #616668;
     font-weight: 400;
@@ -13,6 +15,19 @@ h4 {
     font-size: 1.3em !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+a:focus {
+  text-decoration: none !important;
+  outline:none !important;
+}
+
+a:active
+{
+   outline:none;
+}
 .mainYield {
   min-height: 75vh;
 }
