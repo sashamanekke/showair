@@ -3,15 +3,15 @@
     <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
   </div>
   <div class="reservation-title">
-    <h1>Confirmation: <%= @shower.title %> booked</h1>
-    <p>Booked by <%= current_user %></p>
-    <p><%= Time.now.strftime("%m/%d/%Y") %></p>
+    <h1>Confirmation: <%= @reservation.shower.title %> booked</h1>
+    <p>Booked by <%= @reservation.user.first_name %> <%= @reservation.user.last_name %></p>
+    <p>Booked at <%= @reservation.created_at %></p>
   </div>
 
   <div class="main-grid">
 
           <div class="reservation-box-left">
-            <h2>Shower is @ <%= Time.now.strftime("%H:%M")%></h2>
+            <h2>Shower available @ <%= @reservation.hour%>:00 h</h2>
             <div class="reservation-divider"></div>
             <p><strong>Location:</strong></p>
             <p><%= @shower.address %></p>
