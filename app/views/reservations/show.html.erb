@@ -15,20 +15,20 @@
             <h2>Shower available @ <%= @reservation.hour%>:00 h</h2>
             <div class="reservation-divider"></div>
             <p><strong>Location:</strong></p>
-            <p><%= @shower.address %></p>
+            <p><%= @reservation.shower.address %></p>
           </div>
 
           <div class="reservation-box-right">
             <h2>Charges</h2>
-            <p> € <%= @shower.price %> - 1h use of shower</p>
+            <p> € <%= @reservation.shower.price %> - 1h use of shower</p>
             <p>Service fee:</p>
-            <div class="reservation-shaded-area">Total: € <%= @shower.price %></div>
+            <div class="reservation-shaded-area">Total: € <%= @reservation.shower.price %></div>
           </div>
 
           <div class="reservation-box-bottom">
             <h2>Payment</h2>
             <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
-            <p>Total Paid: € <%= @shower.price %></p>
+            <p>Total Paid: € <%= @reservation.shower.price %></p>
             <div class="reservation-divider"></div>
          <!--    <p>Add billing detials</p> -->
           </div>
