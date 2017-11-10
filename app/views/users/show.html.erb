@@ -21,7 +21,7 @@
         <% else %>
 
         <% @user.reservations.each do |reservation| %>
-        <%= link_to shower_reservation_path(reservation) do %>
+        <%= link_to shower_reservation_path(reservation.shower, reservation) do %>
         <div class="ul-box-style">
           <ul>
             <li>reservation id :<%= reservation.id %></li>
@@ -71,7 +71,7 @@
     <div class="stat">
       <div class="stat-content">
         <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
-      
+
 
 
         <%= link_to "Find Shower", showers_path, :class => "btn btn-medium " %>
