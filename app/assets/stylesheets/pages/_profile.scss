@@ -98,13 +98,13 @@ display: flex;
 }
 
 
-.description h3 {
-  color: $text-grey;
-  font-size: 17px;
-  font-weight: normal;
-  padding: 3px;
-  margin-top: 0px;
-}
+// .description h3 {
+//   color: $text-grey;
+//   font-size: 17px;
+//   font-weight: normal;
+//   padding: 3px;
+//   margin-top: 0px;
+// }
 .description p {
   color: $text-grey;
 
@@ -195,6 +195,8 @@ display: flex;
 
 
 .title {
+  color: $text-grey;
+  font-weight: normal;
   font-size: 34px;
   margin-top: 0px;
   padding-top: 0px;
