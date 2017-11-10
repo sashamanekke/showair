@@ -6,6 +6,7 @@
         <%= f.input :card_number, placeholder: "XXXX-XXXX-XXXX-1234"  %>
         <%= f.input :expiration, placeholder: "MM/YYYY" %>
         <%= f.input :security_code, placeholder: "XXX" %>
+        <%= f.input :availibility, :as => :hidden, :input_html => { :value => @availibility.id} %>
         <%=f.button :submit, class: "btn btn-primary" %>
         <% end %>
       </div>

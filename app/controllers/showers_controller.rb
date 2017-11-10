@@ -40,10 +40,15 @@ class ShowersController < ApplicationController
         @shower.picture_urls = [url]
       end
       24.times do |x|
-      available = Availibility.new(hour: x, available: false)
-      available.shower = @shower
-      available.save!
-    end
+        available = Availibility.new(hour: x)
+        if (x >= 8) && (x <= 20)
+          available.available = true
+        else
+          available.available = false
+        end
+        available.shower = @shower
+        available.save!
+      end
       redirect_to shower_path(@shower)
     else
       render :new
