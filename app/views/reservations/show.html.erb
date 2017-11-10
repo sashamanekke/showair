@@ -1,10 +1,10 @@
-<div class="container">
+<div class="reservation-main-container">
   <div class="text-center">
     <%= link_to 'Home', showers_path, class: "btn btn-primary" %>
   </div>
   <div class="reservation-title">
     <h1>Confirmation: <%= @shower.title %> booked</h1>
-    <p>Booked by <%= current_user %></p>
+    <p>Booked by <%= current_user.email %></p>
     <p><%= Time.now.strftime("%m/%d/%Y") %></p>
   </div>
 

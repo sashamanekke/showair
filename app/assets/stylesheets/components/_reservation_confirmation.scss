@@ -1,4 +1,4 @@
-.container {
+.reservation-main-container {
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -14,6 +14,7 @@
 }
 
 .reservation-title {
+  text-align: left;
   padding-bottom: 15px;
   h1 {
     font-size: 24px;
@@ -90,6 +91,6 @@
   }
 
   .reservation-shaded-area {
-    background-color: #edefed;
+    background-color: #ccc;
     padding: 20px 10px;
   }
