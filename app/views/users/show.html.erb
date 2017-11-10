@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="profile text-center">
     <div class="main">
@@ -22,6 +21,7 @@
         <% else %>
 
         <% @user.reservations.each do |reservation| %>
+        <%= link_to shower_reservation_path(reservation) do %>
         <div class="ul-box-style">
           <ul>
             <li>reservation id :<%= reservation.id %></li>
@@ -29,6 +29,7 @@
             <li>reservation shower:<%= reservation.shower.title %></li>
           </ul>
         </div>
+        <% end %>
         <% end %>
         <% end %>
       </div>
@@ -45,6 +46,7 @@
 
         <% else %>
         <% @user.showers.each do |shower| %>
+        <%= link_to shower_path(shower) do %>
         <div class="box-style">
           <div class="ul-box-style-2" style="background-image: linear-gradient(-225deg, rgba(0,21,168,0.3) 0%, rgba(50,106,251,0.4) 50%), url('<%= cl_image_path shower.pictures[0].path , height: 800, width: 800, crop: :fill %>')">
             <h3 class="shower-title"><%= shower.title %></h3>
@@ -58,6 +60,8 @@
             </ul>
           </div>
         </div>
+
+        <% end %>
         <% end %>
         <% end %>
 
@@ -68,7 +72,7 @@
       <div class="stat-content">
         <!-- <a href="#" class="btn btn-primary ">Find Shower</a> -->
         <%= link_to "Find Shower", showers_path, :class => "btn btn-primary " %>
-
+        <%= link_to "Reservations", shower_reservations_path(current_user), :class => "btn btn-primary" %>
       </div>
     </div>
     <div class="description">
@@ -88,6 +92,7 @@
     </div>
   </div>
 </div>
+
 
 
 

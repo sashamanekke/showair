@@ -1,0 +1,61 @@
+.all-res {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.all-res:last-child {
+  border-bottom: none;
+}
+.all-res-body {
+  flex-grow: 1;
+}
+.all-res-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.all-res-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.all-res-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.all-res-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.all-res-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.all-res-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.all-res-body p {
+  margin: 6px 0;
+}
+.all-res-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.all-res-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
