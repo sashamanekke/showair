@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :showers do
     resources :reservations, only: [:show, :create, :new]
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 end
 
 

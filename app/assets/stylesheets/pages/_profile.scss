@@ -68,7 +68,7 @@ display: flex;
       color: #616668;
 
     padding: 1px;
-    margin: 0px;
+
 
 }
 .profile p {
@@ -87,7 +87,9 @@ display: flex;
   opacity: 0.7;
 }
 
-
+.stat {
+  padding: 15px;
+}
 
 .stat h3 {
   color: $text-grey;
@@ -209,6 +211,11 @@ display: flex;
   border-bottom: 1px solid #5985ff;
 }
 
+.title h3 {
+
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
 .link_shower {
   margin-bottom: 15px !important;
 }

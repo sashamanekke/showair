@@ -1,10 +1,12 @@
 
 <figure class="snip1515">
-  <div class="profile-image"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Katcom3.jpg" alt="sample47" /></div>
+  <div class="profile-image">
+    <% if @user.avatar? %>
+  <%= cl_image_tag @user.avatar.path , height: 800, width: 800, crop: :fill %>' alt="sample47" />
+  <% end %></div>
   <figcaption>
-    <!-- <h3><%= @user.name %><%= @user.surname %></h3>
-    <h4><%= @user.address %></h4> -->
-    <h3>Kathy Shower</h3>
+
+    <h3><%= @user.name %><%= @user.surname %> </h3>
     <h4>American model and actress</h4>
     <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
     <div class="icons"><a href="#"><i class="fa fa-instagram"></i></a>
