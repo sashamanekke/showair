@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="text-center" style="padding: 20px 0;">
+        <h1>Pay For Your Shower</h1>
+      </div>
       <div class="sf">
         <%= simple_form_for([@shower, @reservation]) do |f| %>
         <%= f.input :card_number, placeholder: "XXXX-XXXX-XXXX-1234"  %>
