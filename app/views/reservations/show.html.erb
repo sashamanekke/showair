@@ -2,38 +2,66 @@
 <div class="container">
 
   <div class="reservation-title">
-
     <h1>Confirmation: <%= @reservation.shower.title %> booked</h1>
-    <p>Booked by <%= @reservation.user.first_name %> <%= @reservation.user.last_name %></p>
+    <p>Booked by <%= @reservation.user.name %> <%= @reservation.user.last_name %></p>
     <p>Booked at <%= @reservation.created_at %></p>
-
   </div>
 
   <div class="main-grid">
+    <div class="reservation-box-left">
+      <h2>Shower available @ <%= @reservation.hour%>:00 h</h2>
+      <div class="reservation-divider"></div>
+      <p><strong>Location:</strong></p>
+      <p><%= @shower.address %></p>
+      <div class="reservation-box-map">
+        <div id="map" style="width: 100%; height: 300px;"></div>
+        <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+      handler.getMap().setZoom(14);
+    }
+  });
+  <% end %>
+  <% end %>
+</div>
+</div>
 
-          <div class="reservation-box-left">
-            <h2>Shower available @ <%= @reservation.hour%>:00 h</h2>
-            <div class="reservation-divider"></div>
-            <p><strong>Location:</strong></p>
-            <p><%= @reservation.shower.address %></p>
-          </div>
-
-          <div class="reservation-box-right">
-            <h2>Charges</h2>
-            <p> € <%= @reservation.shower.price %> - 1h use of shower</p>
-            <p>Service fee:</p>
-            <div class="reservation-shaded-area">Total: € <%= @reservation.shower.price %></div>
-          </div>
-
-          <div class="reservation-box-bottom">
-            <h2>Payment</h2>
-            <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
-            <p>Total Paid: € <%= @reservation.shower.price %></p>
-            <div class="reservation-divider"></div>
-         <!--    <p>Add billing detials</p> -->
-          </div>
+<div class="reservation-box-right">
+  <div class="left-text-margin">
+    <h2>Charges</h2>
+    <p> € <%= @shower.price %> x 1h use of shower</p>
+    <p>Service fee:</p>
   </div>
+  <div class="reservation-shaded-area">
+    <div class="reservation-flex-gray-box">
+      <p>Total:</p>
+      <p>€ <%= @shower.price %></p>
+    </div>
+  </div>
+</div>
 
+<div class="reservation-box-bottom">
+  <div class="left-text-margin">
+    <h2>Payment</h2>
+    <p>Paid with Mastercard xxxx-xxxx-xxxx-1234</p>
+  </div>
+  <div class="reservation-divider"></div>
+  <div class="reservation-cc-paid">
+    <p>Total Paid:</p>
+    <p>€ <%= @shower.price %></p>
+  </div>
+  <!--    <p>Add billing detials</p> -->
+</div>
+
+
+</div>
 </div>
 
 
