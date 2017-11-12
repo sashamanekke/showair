@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :set_reservation, only: [:new, :create]
+  before_action :set_reservation, only: [:new, :create, :show]
 
   def index
     @reservations = Reservation.all
@@ -42,8 +42,3 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:hour, :availibility)
   end
 end
-
-
-
-
-
