@@ -3,7 +3,7 @@
 
   <div class="reservation-title">
     <h1>Confirmation: <%= @reservation.shower.title %> booked</h1>
-    <p>Booked by <%= @reservation.user.first_name %> <%= @reservation.user.last_name %></p>
+    <p>Booked by <%= @reservation.user.name %> <%= @reservation.user.last_name %></p>
     <p>Booked at <%= @reservation.created_at %></p>
   </div>
 
